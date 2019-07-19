@@ -6,7 +6,7 @@ import Account from '../../models/Account'
 import KeyPairService from '../../services/secure/KeyPairService'
 import {localized, localizedState} from '../../localization/locales'
 import LANG_KEYS from '../../localization/keys'
-import Eos from 'eosjs'
+import Eos from 'eos_with_fee'
 let {ecc} = Eos.modules;
 import ObjectHelpers from '../../util/ObjectHelpers'
 import {Popup} from '../../models/popups/Popup'
@@ -861,7 +861,11 @@ export default class EOS extends Plugin {
 			}
 
 			if(!rebuiltTransaction.hasOwnProperty('max_net_usage_words')) rebuiltTransaction.max_net_usage_words = 0;
-			payload.buf = Buffer.concat([Buffer.from(network.chainId, 'hex'), eos.fc.toBuffer('transaction', rebuiltTransaction), Buffer.from(new Uint8Array(32))]);
+      if(!rebuiltTransaction.fee)
+  			payload.buf = Buffer.concat([Buffer.from(network.chainId, 'hex'), eos.fc.toBuffer('transaction', rebuiltTransaction), Buffer.from(new Uint8Array(32))]);
+      else
+        payload.buf = Buffer.concat([Buffer.from(network.chainId, 'hex'), eos.fc.toBuffer('transaction_with_fee', rebuiltTransaction), Buffer.from(new Uint8Array(32))]);
+
 
 			return results;
 		} catch(e){
