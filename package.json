@@ -1,6 +1,6 @@
 {
   "name": "scatter",
-  "version": "11.0.1",
+  "version": "11.0.12",
   "private": true,
   "buttonText": "Scatter Desktop Companion",
   "author": {
@@ -119,11 +119,7 @@
     "webpack-dev-server": "^2.11.3",
     "webpack-merge": "^4.1.4"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
   "bugs": {
     "url": "https://github.com/GetScatter/ScatterDesktop/issues"
   },
@@ -132,21 +128,12 @@
     "appId": "com.get-scatter.server",
     "artifactName": "${os}-${productName}-${version}-${arch}.${ext}",
     "asar": true,
-    "asarUnpack": [
-      "node_modules/node-notifier/vendor/**"
-    ],
+    "asarUnpack": ["node_modules/node-notifier/vendor/**"],
     "protocols": {
       "name": "electron-deep-linking",
-      "schemes": [
-        "scatter"
-      ]
+      "schemes": ["scatter"]
     },
-    "files": [
-      "dist/**/*",
-      "static/**/*",
-      "electron.js",
-      "package.json"
-    ],
+    "files": ["dist/**/*", "static/**/*", "electron.js", "package.json"],
     "publish": {
       "provider": "github"
     },
@@ -164,30 +151,22 @@
     },
     "dmg": {
       "icon": "static/icons/icon.png",
-      "contents": [
-        {
-          "x": 134,
-          "y": 190
-        },
-        {
-          "x": 344,
-          "y": 190,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
+      "contents": [{
+        "x": 134,
+        "y": 190
+      }, {
+        "x": 344,
+        "y": 190,
+        "type": "link",
+        "path": "/Applications"
+      }]
     },
     "win": {
       "icon": "static/icons/icon.ico",
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        }
-      ]
+      "target": [{
+        "target": "nsis",
+        "arch": ["x64", "ia32"]
+      }]
     },
     "linux": {
       "category": "Network",
@@ -210,13 +189,7 @@
     "npm": ">= 3.0.0"
   },
   "homepage": "https://get-scatter.com",
-  "keywords": [
-    "scatter",
-    "blockchain",
-    "signatures",
-    "eos",
-    "ethereum"
-  ],
+  "keywords": ["scatter", "blockchain", "signatures", "eos", "ethereum"],
   "license": "MIT",
   "main": "electron.js",
   "repository": {
