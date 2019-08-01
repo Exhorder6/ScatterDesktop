@@ -24,7 +24,7 @@ install:
 - source ~/.bashrc
 - npm install -g xvfb-maybe
 - npm install -g yarn
-- npm -g electron-builder
+- npm install -g electron-builder
 - yarn install
 script:
 - yarn run build
