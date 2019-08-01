@@ -24,9 +24,9 @@ install:
 - source ~/.bashrc
 - npm install -g xvfb-maybe
 - npm install -g yarn
-- yarn install
+- npm install
 script:
-- yarn run build
+- npm run build
 branches:
   only:
   - master
