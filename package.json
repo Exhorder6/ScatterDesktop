@@ -1,6 +1,6 @@
 {
   "name": "scatter",
-  "version": "11.0.12",
+  "version": "11.0.13",
   "private": true,
   "buttonText": "Scatter Desktop Companion",
   "author": {
@@ -9,7 +9,7 @@
     "url": "https://get-scatter.com/"
   },
   "scripts": {
-    "build": "concurrently \"npm run copybuildfiles\" \"node build/build.js\"",
+    "build": "electron-builder",
     "copybuildfiles": "copyfiles splash.html dist",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "postinstall": "electron-rebuild --force",
@@ -18,7 +18,8 @@
     "release-win": "electron-builder --win",
     "start": "npm run dev",
     "testfile": "mocha --require test/babel --exit --timeout 1000000",
-    "test": "npm run testfile \"test/**/*.spec.js\" --timeout 1000000"
+    "test": "npm run testfile \"test/**/*.spec.js\" --timeout 1000000",
+    "publish": "node ./public.js"
   },
   "dependencies": {
     "@ledgerhq/hw-app-eth": "^4.55.0",
@@ -29,6 +30,7 @@
     "babel-polyfill": "^6.26.0",
     "bip32-path": "^0.4.2",
     "bip39": "^2.5.0",
+    "cfonts": "^2.4.4",
     "chartist": "^0.11.0",
     "electron-store": "^3.2.0",
     "eos_with_fee": "^16.0.62",
@@ -54,6 +56,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
+    "babili-webpack-plugin": "^0.1.2",
     "bignumber.js": "^7.2.1",
     "bitcoinjs-lib": "^5.0.4",
     "blockchain.info": "^2.12.1",
@@ -81,6 +84,7 @@
     "jsdom-global": "^3.0.2",
     "mocha": "^6.1.4",
     "mocha-jsdom": "^2.0.0",
+    "multispinner": "^0.2.1",
     "node-sass": "^4.11.0",
     "ora": "^1.2.0",
     "portfinder": "^1.0.17",
