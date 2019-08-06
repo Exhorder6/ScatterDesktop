@@ -168,6 +168,10 @@
       "target": "AppImage"
     }
   },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
   "homepage": "https://get-scatter.com",
   "keywords": ["scatter", "blockchain", "signatures", "eos", "ethereum"],
   "license": "MIT",
