@@ -1,6 +1,6 @@
 {
   "name": "scatter",
-  "version": "11.0.13",
+  "version": "11.0.12",
   "buttonText": "Scatter Desktop Companion",
   "author": {
     "name": "GetScatter",
@@ -127,7 +127,7 @@
     "url": "https://github.com/GetScatter/ScatterDesktop/issues"
   },
   "build": {
-    "productName": "Scatter For EOSForce",
+    "productName": "ScatterForEOSForce",
     "appId": "com.electron.eosforce",
     "files": ["dist/**/*", "static/**/*", "electron.js", "package.json"],
     "directories": {
