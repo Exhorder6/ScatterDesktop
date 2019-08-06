@@ -8,7 +8,7 @@
     "url": "https://get-scatter.com/"
   },
   "scripts": {
-    "build": "node build/build.js && electron-builder -p always",
+    "build": "node build/build.js && electron-builder",
     "copybuildfiles": "copyfiles splash.html dist",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "postinstall": "electron-rebuild --force",
@@ -129,24 +129,8 @@
   "build": {
     "productName": "eosforce",
     "appId": "com.electron.eosforce",
-    "artifactName": "${os}-${productName}-${version}-${arch}.${ext}",
-    "asar": true,
-    "asarUnpack": ["node_modules/node-notifier/vendor/**"],
-    "protocols": {
-      "name": "electron-deep-linking",
-      "schemes": ["scatter"]
-    },
     "files": ["dist/**/*", "static/**/*", "electron.js", "package.json"],
-    "nsis": {
-      "deleteAppDataOnUninstall": true,
-      "allowToChangeInstallationDirectory": true,
-      "oneClick": false,
-      "createDesktopShortcut": "always",
-      "createStartMenuShortcut": true,
-      "shortcutName": "Scatter"
-    },
     "directories": {
-      "buildResources": "build",
       "output": "release"
     },
     "dmg": {
