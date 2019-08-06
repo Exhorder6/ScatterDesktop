@@ -6,11 +6,12 @@ deploy:
      provider: releases
      api_key: 
       secure: 'MIGJAoGBALeFvpaS4szqW9jo3uH3kaS2YJZSyghvokomKuiPIBr8mnO6BNm6C5sJ\nDKX7ihhJdKUA/MpEFCiObj5ZPiXcV7gHlyVN2FCP5ucFLHtasa3j6nCH5lvdLxAw\nAbPKq8PPCq8rurmFWBLuuCWXR0VW2OG1+Oo4b9U1d5ywST7hpvOrAgMBAAE='
+on:
+    repo: eosforce/ScatterDesktop
+    tags: true
 matrix:
   include:
-  - os: windows
   - os: osx
-  - os: linux
     env: CC=clang CXX=clang++ npm_config_clang=1
     compiler: clang
 addons:
@@ -37,3 +38,4 @@ script:
 branches:
   only:
   - master
+
