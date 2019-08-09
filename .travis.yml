@@ -22,6 +22,8 @@ before_install:
 install:
 - source ~/.bashrc
 - npm install -g node-gyp
+- npm install -g node-hid
+- npm install -g xvfb-maybe
 - npm install -g yarn
 - npm install -g electron-builder
 - yarn

@@ -127,7 +127,7 @@
     "url": "https://github.com/GetScatter/ScatterDesktop/issues"
   },
   "build": {
-    "productName": "ScatterForEOSForce",
+    "productName": "ScatterForEOSforce",
     "appId": "com.electron.eosforce",
     "files": ["dist/**/*", "static/**/*", "electron.js", "package.json"],
     "directories": {
