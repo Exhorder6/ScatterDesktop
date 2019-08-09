@@ -5,9 +5,7 @@ language: node_js
 node_js: "11"
 matrix:
   include:
-  - os: linux
   - os: osx
-  - os: windows
     env: CC=clang CXX=clang++ npm_config_clang=1
     compiler: clang
 deploy:
