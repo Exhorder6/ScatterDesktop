@@ -26,9 +26,9 @@ install:
 - npm install -g xvfb-maybe
 - npm install -g yarn
 - npm install -g electron-builder
-- yarn
+- yarn install
 script:
-- yarn run build
+- npm run build
 branches:
   only:
   - master
