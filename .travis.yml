@@ -24,8 +24,9 @@ install:
 - npm install -g node-gyp
 - npm install -g node-hid
 - npm install -g xvfb-maybe
-- npm install -g yarn
 - npm install -g electron-builder
+- npm install -g yarn
+- yarn
 - yarn install
 script:
 - npm run build
