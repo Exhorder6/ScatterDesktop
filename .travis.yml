@@ -5,6 +5,7 @@ language: node_js
 node_js: "11"
 matrix:
   include:
+  - os: windows
   - os: linux
   - os: osx
     env: CC=clang CXX=clang++ npm_config_clang=1

@@ -8,7 +8,7 @@
     "url": "https://get-scatter.com/"
   },
   "scripts": {
-    "build": "electron-builder",
+    "build": "node build/build.js && electron-builder",
     "copybuildfiles": "copyfiles splash.html dist",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "postinstall": "electron-rebuild --force",
