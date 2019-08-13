@@ -2,7 +2,7 @@ osx_image: xcode9.4
 sudo: required
 dist: trusty
 language: node_js
-node_js: "11"
+node_js: "12"
 matrix:
   include:
   - os: windows
