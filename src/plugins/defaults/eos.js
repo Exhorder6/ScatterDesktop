@@ -6,6 +6,7 @@ import Account from '../../models/Account'
 import KeyPairService from '../../services/secure/KeyPairService'
 import {localized, localizedState} from '../../localization/locales'
 import LANG_KEYS from '../../localization/keys'
+import EOSForce from 'eosforce'
 import Eos from 'eos_with_fee'
 let {ecc} = Eos.modules;
 import ObjectHelpers from '../../util/ObjectHelpers'
@@ -158,7 +159,9 @@ const EXPLORER = {
 
 export default class EOS extends Plugin {
 
-	constructor(){ super(Blockchains.EOSIO, PluginTypes.BLOCKCHAIN_SUPPORT) }
+	constructor(){ 
+    super(Blockchains.EOSIO, PluginTypes.BLOCKCHAIN_SUPPORT);
+  }
 
 	bustCache(){ cachedInstances = {}; }
 	defaultExplorer(){ return EXPLORER; }
@@ -678,9 +681,16 @@ export default class EOS extends Plugin {
 				? payload => this.signerWithPopup(payload, account, reject)
 				: payload => this.signer(payload, account.publicKey, false, false, account);
 
-			const eos = Eos({httpEndpoint:account.network().fullhost(), chainId:account.network().chainId, signProvider});
-			const contractObject = await eos.contract(contract);
-			const amountWithSymbol = amount.indexOf(symbol) > -1 ? amount : `${amount} ${symbol}`;
+      // adapt for EOSForce
+      const is_eosforce = account.network().name == 'EOSForce Mainnet';
+      const EOS_OBJ = is_eosforce ? EOSForce : Eos;
+      let new_symbol = is_eosforce && contract == 'eosio.token' && symbol == 'EOSC' ? 'EOS' : symbol;
+      let new_contract = is_eosforce ? 'eosio' : contract;
+      // adapt for EOSForce end
+
+			const eos = EOS_OBJ({httpEndpoint:account.network().fullhost(), chainId:account.network().chainId, signProvider});
+			const contractObject = await eos.contract(new_contract);
+			const amountWithSymbol = amount.indexOf(new_symbol) > -1 ? amount : `${amount} ${new_symbol}`;
 			resolve(await contractObject.transfer(account.name, to, amountWithSymbol, memo, { authorization:[account.formatted()] })
 				.catch(error => {
 					console.error('error', error);

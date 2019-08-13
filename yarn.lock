@@ -1320,6 +1320,10 @@ babel-preset-stage-3@^6.24.1:
     babel-plugin-transform-exponentiation-operator "^6.24.1"
     babel-plugin-transform-object-rest-spread "^6.22.0"
 
+babel-regenerator-runtime@^6.5.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/babel-regenerator-runtime/-/babel-regenerator-runtime-6.5.0.tgz#0e41cd1c9f80442466f015c749fff8ba98f8e110"
+
 babel-register@^6.22.0, babel-register@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-register/-/babel-register-6.26.0.tgz#6ed021173e2fcb486d7acb45c6009a856f647071"
@@ -1484,6 +1488,17 @@ bip32-path@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/bip32-path/-/bip32-path-0.4.2.tgz#5db0416ad6822712f077836e2557b8697c0c7c99"
 
+bip32@^1.0.2, bip32@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/bip32/-/bip32-1.0.4.tgz#188ad57a45fb1342c9aabe969d0612c704a987b4"
+  dependencies:
+    bs58check "^2.1.1"
+    create-hash "^1.2.0"
+    create-hmac "^1.1.7"
+    tiny-secp256k1 "^1.0.0"
+    typeforce "^1.11.5"
+    wif "^2.0.6"
+
 bip32@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/bip32/-/bip32-2.0.3.tgz#02575a78e25decec5c31ee950ecd5839508c6d3e"
@@ -1515,6 +1530,26 @@ bip66@^1.1.0, bip66@^1.1.5:
 bitcoin-ops@^1.3.0, bitcoin-ops@^1.4.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/bitcoin-ops/-/bitcoin-ops-1.4.1.tgz#e45de620398e22fd4ca6023de43974ff42240278"
+
+bitcoinjs-lib@^4.0.3:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/bitcoinjs-lib/-/bitcoinjs-lib-4.0.5.tgz#2cce3469b950fade9f0442755ebb26bf9de519a1"
+  dependencies:
+    bech32 "^1.1.2"
+    bip32 "^1.0.4"
+    bip66 "^1.1.0"
+    bitcoin-ops "^1.4.0"
+    bs58check "^2.0.0"
+    create-hash "^1.1.0"
+    create-hmac "^1.1.3"
+    merkle-lib "^2.0.10"
+    pushdata-bitcoin "^1.0.1"
+    randombytes "^2.0.1"
+    safe-buffer "^5.1.1"
+    tiny-secp256k1 "^1.0.0"
+    typeforce "^1.11.3"
+    varuint-bitcoin "^1.0.4"
+    wif "^2.0.1"
 
 bitcoinjs-lib@^5.0.4:
   version "5.0.5"
@@ -3178,6 +3213,23 @@ eos_with_fee@^16.0.62:
     eosjs-ecc "4.0.4"
     fcbuffer "^2.2.1"
 
+eosforce@^15.0.7:
+  version "15.0.7"
+  resolved "https://registry.yarnpkg.com/eosforce/-/eosforce-15.0.7.tgz#81551990a79bd7244d7db26c3ae32e7f54cc705e"
+  dependencies:
+    babel-regenerator-runtime "^6.5.0"
+    babel-runtime "^6.26.0"
+    binaryen "^37.0.0"
+    bip32 "^1.0.2"
+    bip39 "^2.5.0"
+    bitcoinjs-lib "^4.0.3"
+    create-hash "^1.1.3"
+    eosjs "^16.0.9"
+    eosjs-api "git+https://github.com/eosforce/eosjs-api#faea748"
+    eosjs-ecc "4.0.1"
+    fcbuffer "2.2.0"
+    sjcl "^1.0.8"
+
 eosjs-api@7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/eosjs-api/-/eosjs-api-7.0.3.tgz#c274604a126fb53d0ed7aca9443e3436836517ff"
@@ -3191,6 +3243,26 @@ eosjs-api@7.0.4:
   dependencies:
     camel-case "^3.0.0"
     isomorphic-fetch "^2.2.1"
+
+"eosjs-api@git+https://github.com/eosforce/eosjs-api.git#faea748":
+  version "6.2.1"
+  resolved "git+https://github.com/eosforce/eosjs-api.git#faea748329e316110513debcdcaa7ffd4873268f"
+  dependencies:
+    camel-case "^3.0.0"
+    isomorphic-fetch "^2.2.1"
+
+eosjs-ecc@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/eosjs-ecc/-/eosjs-ecc-4.0.1.tgz#0a118000d3a78b9eab1432dd758f705810461adf"
+  dependencies:
+    bigi "^1.4.2"
+    browserify-aes "^1.0.6"
+    bs58 "^4.0.1"
+    bytebuffer "^5.0.1"
+    create-hash "^1.1.3"
+    create-hmac "^1.1.6"
+    ecurve "^1.0.5"
+    randombytes "^2.0.5"
 
 eosjs-ecc@4.0.4, eosjs-ecc@^4.0.1, eosjs-ecc@^4.0.2, eosjs-ecc@^4.0.4:
   version "4.0.4"
@@ -3784,6 +3856,14 @@ faye-websocket@~0.11.0:
   resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.11.1.tgz#f0efe18c4f56e4f40afc7e06c719fd5ee6188f38"
   dependencies:
     websocket-driver ">=0.5.1"
+
+fcbuffer@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/fcbuffer/-/fcbuffer-2.2.0.tgz#c85d01485f74bb917d87689a55890dba70fc1de3"
+  dependencies:
+    bn.js "^4.11.8"
+    bytebuffer "^5.0.1"
+    ieee-float "^0.6.0"
 
 fcbuffer@2.2.2, fcbuffer@^2.2.1:
   version "2.2.2"
@@ -7928,7 +8008,7 @@ sinon@^4.0.0:
     supports-color "^5.1.0"
     type-detect "^4.0.5"
 
-sjcl@^1.0.7:
+sjcl@^1.0.7, sjcl@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/sjcl/-/sjcl-1.0.8.tgz#f2ec8d7dc1f0f21b069b8914a41a8f236b0e252a"
 
@@ -8479,6 +8559,16 @@ tiny-secp256k1-native@1.1.x:
   resolved "https://registry.yarnpkg.com/tiny-secp256k1-native/-/tiny-secp256k1-native-1.1.0.tgz#b554a73061836a0914e7f9461fc336dd7386de73"
   dependencies:
     bindings "^1.3.0"
+    nan "^2.13.2"
+
+tiny-secp256k1@^1.0.0:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/tiny-secp256k1/-/tiny-secp256k1-1.1.3.tgz#e93b1e1bf62e9bd1ad3ab24af27ff6127ce0e077"
+  dependencies:
+    bindings "^1.3.0"
+    bn.js "^4.11.8"
+    create-hmac "^1.1.7"
+    elliptic "^6.4.0"
     nan "^2.13.2"
 
 tiny-secp256k1@^1.1.0, tiny-secp256k1@^1.1.1:

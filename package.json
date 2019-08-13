@@ -33,6 +33,7 @@
     "chartist": "^0.11.0",
     "electron-store": "^3.2.0",
     "eos_with_fee": "^16.0.62",
+    "eosforce": "^15.0.7",
     "ethereumjs-tx": "^1.3.7",
     "ethereumjs-util": "^5.2.0",
     "json-formatter-js": "^2.2.1",
@@ -122,35 +123,52 @@
     "webpack-dev-server": "^2.11.3",
     "webpack-merge": "^4.1.4"
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "bugs": {
     "url": "https://github.com/GetScatter/ScatterDesktop/issues"
   },
   "build": {
     "productName": "ScatterForEOSForce",
     "appId": "com.electron.eosforce",
-    "files": ["dist/**/*", "static/**/*", "electron.js", "package.json"],
+    "files": [
+      "dist/**/*",
+      "static/**/*",
+      "electron.js",
+      "package.json"
+    ],
     "directories": {
       "output": "release"
     },
     "dmg": {
       "icon": "static/icons/icon.png",
-      "contents": [{
-        "x": 134,
-        "y": 190
-      }, {
-        "x": 344,
-        "y": 190,
-        "type": "link",
-        "path": "/Applications"
-      }]
+      "contents": [
+        {
+          "x": 134,
+          "y": 190
+        },
+        {
+          "x": 344,
+          "y": 190,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
     },
     "win": {
       "icon": "static/icons/icon.ico",
-      "target": [{
-        "target": "nsis",
-        "arch": ["x64", "ia32"]
-      }]
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
     },
     "linux": {
       "category": "Network",
@@ -173,7 +191,13 @@
     "npm": ">= 3.0.0"
   },
   "homepage": "https://get-scatter.com",
-  "keywords": ["scatter", "blockchain", "signatures", "eos", "ethereum"],
+  "keywords": [
+    "scatter",
+    "blockchain",
+    "signatures",
+    "eos",
+    "ethereum"
+  ],
   "license": "MIT",
   "main": "electron.js",
   "repository": {
