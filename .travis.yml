@@ -16,12 +16,12 @@ addons:
     - libgnome-keyring-dev
     - icnsutils
 before_install:
+- npm i -g npm@6.10.3
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install --no-install-recommends -y build-essential libudev-dev libusb-1.0-0-dev icnsutils graphicsmagick xz-utils; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then curl -o- -L https://yarnpkg.com/install.sh | bash; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then curl -o- -L https://yarnpkg.com/install.sh | bash; fi
 install:
 - source ~/.bashrc
-- npm install -g npm@latest
 - npm install -g node-gyp
 - npm install -g node-hid
 - npm install -g xvfb-maybe
