@@ -21,6 +21,7 @@ before_install:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then curl -o- -L https://yarnpkg.com/install.sh | bash; fi
 install:
 - source ~/.bashrc
+- npm install -g npm@latest
 - npm install -g node-gyp
 - npm install -g node-hid
 - npm install -g xvfb-maybe
