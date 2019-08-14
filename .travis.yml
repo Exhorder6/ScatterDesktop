@@ -3,6 +3,7 @@ sudo: required
 dist: trusty
 language: node_js
 node_js: "12"
+# skip_cleanup: true
 matrix:
   include:
   - os: windows
@@ -19,13 +20,14 @@ before_install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install --no-install-recommends -y build-essential libudev-dev libusb-1.0-0-dev icnsutils graphicsmagick xz-utils; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then curl -o- -L https://yarnpkg.com/install.sh | bash; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then curl -o- -L https://yarnpkg.com/install.sh | bash; fi
+env: 
+- YARN_GPG=no
 install:
 - source ~/.bashrc
 - npm install -g node-gyp
 - npm install -g node-hid
 - npm install -g xvfb-maybe
 - npm install -g electron-builder
-- npm install -g yarn@1.7.0
 - npm install
 script:
 - npm run build
