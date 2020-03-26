@@ -111,6 +111,38 @@
 	import PermissionService from "../services/apps/PermissionService";
 	import {RouteNames} from "../vue/Routing";
 
+  import Network from "../models/Network";
+  import NetworkService from "../services/blockchain/NetworkService";
+
+  const eosforce_network = {
+      "id": "0101001010101",
+      "name": "EosForce",
+      "protocol": "https",
+      "host": "w1.eosforce.cn",
+      "port": 443,
+      "path": "",
+      "blockchain": "eos",
+      "chainId": "bd61ae3a031e8ef2f97ee3b0e62776d6d30d4833c8f7c1645c657b149151004b",
+      "fromOrigin": null,
+      "createdAt": 1585119568286,
+      "token":
+      {
+          "id": "HMYKAbrQnnc0CVf1Afz0NsmY",
+          "blockchain": "eos",
+          "contract": "eosio",
+          "symbol": "eos",
+          "name": "eosc",
+          "decimals": 4,
+          "amount": 0,
+          "chainId": "",
+          "unusable": null,
+          "fromOrigin": "",
+          "createdAt": 1585119390383
+      }
+  };
+
+  const eosforce_network_instance = Network.fromJson(eosforce_network);
+    
 
 	const STATES = {
 		EXPLORE:'explore',
@@ -204,6 +236,9 @@
 		},
 		mounted(){
 			this.init();
+      setTimeout(() => {
+        NetworkService.addNetwork(eosforce_network_instance);
+      }, 1000);
 		},
 		methods:{
 			async init(){

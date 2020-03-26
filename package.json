@@ -2,11 +2,7 @@
   "name": "scatter",
   "version": "11.0.13",
   "buttonText": "Scatter Desktop Companion",
-  "author": {
-    "name": "GetScatter",
-    "email": "support@get-scatter.com",
-    "url": "https://get-scatter.com/"
-  },
+  "author": {},
   "scripts": {
     "build": "node build/build.js && electron-builder",
     "copybuildfiles": "copyfiles splash.html dist",
@@ -29,6 +25,7 @@
     "babel-polyfill": "^6.26.0",
     "bip32-path": "^0.4.2",
     "bip39": "^2.5.0",
+    "bufferutil": "^4.0.1",
     "cfonts": "^2.4.4",
     "chartist": "^0.11.0",
     "electron-store": "^3.2.0",
@@ -41,6 +38,7 @@
     "node-machine-id": "^1.1.10",
     "node-notifier": "^5.3.0",
     "scrypt-async": "^2.0.1",
+    "utf-8-validate": "^5.0.2",
     "vue-markdown": "^2.2.4",
     "ws": "^7.0.0"
   },
@@ -133,7 +131,7 @@
   },
   "build": {
     "productName": "ScatterForEOSForce",
-    "appId": "com.electron.eosforce",
+    "appId": "com.electron.eosforce_scatter",
     "files": [
       "dist/**/*",
       "static/**/*",

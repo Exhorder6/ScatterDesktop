@@ -105,7 +105,6 @@
     import Carousel from "../components/reusable/Carousel";
     import PermissionService from "../services/apps/PermissionService";
 
-
     export default {
 	    components: {Carousel, PanelTabs},
 	    data () {return {
